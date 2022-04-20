@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/testFragment"
-        android:name="com.rohitjakhar.greenlightplanettask.TestFragment"
+        android:name="com.rohitjakhar.greenlightplanettask.ui.fragment.TestFragment"
         android:label="fragment_test"
         tools:layout="@layout/fragment_test" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/metricsFragment"
-        android:name="com.rohitjakhar.greenlightplanettask.MetricsFragment"
+        android:name="com.rohitjakhar.greenlightplanettask.ui.fragment.MetricsFragment"
         android:label="fragment_metrics"
         tools:layout="@layout/fragment_metrics" >
         <action
@@ -25,7 +25,7 @@
     </fragment>
     <fragment
         android:id="@+id/zonePerformanceFragment"
-        android:name="com.rohitjakhar.greenlightplanettask.ZonePerformanceFragment"
+        android:name="com.rohitjakhar.greenlightplanettask.ui.fragment.ZonePerformanceFragment"
         android:label="fragment_zone_performance"
         tools:layout="@layout/fragment_zone_performance" >
         <action
@@ -34,7 +34,7 @@
     </fragment>
     <fragment
         android:id="@+id/regionPerformanceFragment"
-        android:name="com.rohitjakhar.greenlightplanettask.RegionPerformanceFragment"
+        android:name="com.rohitjakhar.greenlightplanettask.ui.fragment.RegionPerformanceFragment"
         android:label="fragment_region_performance"
         tools:layout="@layout/fragment_region_performance" >
         <action
@@ -43,7 +43,7 @@
     </fragment>
     <fragment
         android:id="@+id/areaFragment"
-        android:name="com.rohitjakhar.greenlightplanettask.AreaFragment"
+        android:name="com.rohitjakhar.greenlightplanettask.ui.fragment.AreaFragment"
         android:label="fragment_area"
         tools:layout="@layout/fragment_area" />
 </navigation>
