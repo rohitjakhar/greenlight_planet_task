@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/testFragment">
+
+    <fragment
+        android:id="@+id/testFragment"
+        android:name="com.rohitjakhar.greenlightplanettask.TestFragment"
+        android:label="fragment_test"
+        tools:layout="@layout/fragment_test" >
+        <action
+            android:id="@+id/action_testFragment_to_metricsFragment"
+            app:destination="@id/metricsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/metricsFragment"
+        android:name="com.rohitjakhar.greenlightplanettask.MetricsFragment"
+        android:label="fragment_metrics"
+        tools:layout="@layout/fragment_metrics" >
+        <action
+            android:id="@+id/action_metricsFragment_to_zonePerformanceFragment"
+            app:destination="@id/zonePerformanceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/zonePerformanceFragment"
+        android:name="com.rohitjakhar.greenlightplanettask.ZonePerformanceFragment"
+        android:label="fragment_zone_performance"
+        tools:layout="@layout/fragment_zone_performance" >
+        <action
+            android:id="@+id/action_zonePerformanceFragment_to_regionPerformanceFragment"
+            app:destination="@id/regionPerformanceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/regionPerformanceFragment"
+        android:name="com.rohitjakhar.greenlightplanettask.RegionPerformanceFragment"
+        android:label="fragment_region_performance"
+        tools:layout="@layout/fragment_region_performance" >
+        <action
+            android:id="@+id/action_regionPerformanceFragment_to_areaFragment"
+            app:destination="@id/areaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/areaFragment"
+        android:name="com.rohitjakhar.greenlightplanettask.AreaFragment"
+        android:label="fragment_area"
+        tools:layout="@layout/fragment_area" />
+</navigation>
