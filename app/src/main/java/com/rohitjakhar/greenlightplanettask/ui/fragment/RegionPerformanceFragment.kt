@@ -1,19 +1,29 @@
 package com.rohitjakhar.greenlightplanettask.ui.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.rohitjakhar.greenlightplanettask.R
+import androidx.fragment.app.Fragment
+import com.rohitjakhar.greenlightplanettask.databinding.FragmentRegionPerformanceBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class RegionPerformanceFragment : Fragment() {
+    private var _binding: FragmentRegionPerformanceBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_region_performance, container, false)
+    ): View {
+        _binding = FragmentRegionPerformanceBinding.inflate(layoutInflater, container, false)
+        return binding.root
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 }
