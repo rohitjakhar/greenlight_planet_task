@@ -45,5 +45,14 @@
         android:id="@+id/areaFragment"
         android:name="com.rohitjakhar.greenlightplanettask.ui.fragment.AreaFragment"
         android:label="fragment_area"
-        tools:layout="@layout/fragment_area" />
+        tools:layout="@layout/fragment_area" >
+        <action
+            android:id="@+id/action_areaFragment_to_citizensFragment"
+            app:destination="@id/citizensFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/citizensFragment"
+        android:name="com.rohitjakhar.greenlightplanettask.ui.fragment.CitizensFragment"
+        android:label="fragment_citizens"
+        tools:layout="@layout/fragment_citizens" />
 </navigation>
