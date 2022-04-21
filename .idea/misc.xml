@@ -5,6 +5,7 @@
       <map>
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.35" />
         <entry key="app/src/main/res/layout/fragment_area.xml" value="0.35" />
+        <entry key="app/src/main/res/layout/fragment_citizens.xml" value="0.35" />
         <entry key="app/src/main/res/layout/fragment_metrics.xml" value="0.384375" />
         <entry key="app/src/main/res/layout/fragment_region_performance.xml" value="0.35" />
         <entry key="app/src/main/res/layout/fragment_test.xml" value="0.35" />

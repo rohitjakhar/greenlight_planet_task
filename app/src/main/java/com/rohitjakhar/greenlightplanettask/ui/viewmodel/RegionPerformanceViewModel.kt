@@ -15,7 +15,7 @@ import javax.inject.Inject
 class RegionPerformanceViewModel @Inject constructor(
     private val saleDataRepo: SaleDataRepo
 ) : ViewModel() {
-    var regionPerformanceState = MutableStateFlow<Resource<GenericModel>>(Resource.Loading())
+    var regionPerformanceState = MutableStateFlow<Resource<List<GenericModel>>>(Resource.Loading())
         private set
 
     fun getRegionPerformance() {

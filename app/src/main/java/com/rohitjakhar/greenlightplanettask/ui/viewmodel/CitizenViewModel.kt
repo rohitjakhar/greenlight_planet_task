@@ -15,7 +15,7 @@ import javax.inject.Inject
 class CitizenViewModel @Inject constructor(
     private val saleDataRepo: SaleDataRepo
 ) : ViewModel() {
-    var citizenState = MutableStateFlow<Resource<GenericModel>>(Resource.Loading())
+    var citizenState = MutableStateFlow<Resource<List<GenericModel>>>(Resource.Loading())
         private set
 
     fun getCitizen() {

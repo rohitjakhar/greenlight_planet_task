@@ -15,7 +15,7 @@ import javax.inject.Inject
 class AreaViewModel @Inject constructor(
     private val saleDataRepo: SaleDataRepo
 ) : ViewModel() {
-    var areaState = MutableStateFlow<Resource<GenericModel>>(Resource.Loading())
+    var areaState = MutableStateFlow<Resource<List<GenericModel>>>(Resource.Loading())
         private set
 
     fun getArea() {

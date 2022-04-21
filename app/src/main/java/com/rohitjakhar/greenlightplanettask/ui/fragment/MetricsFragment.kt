@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.rohitjakhar.greenlightplanettask.databinding.FragmentMetricsBinding
+import com.rohitjakhar.greenlightplanettask.ui.adapter.GenericAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
