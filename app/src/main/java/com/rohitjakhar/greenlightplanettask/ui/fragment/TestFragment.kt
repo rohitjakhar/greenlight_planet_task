@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.rohitjakhar.greenlightplanettask.databinding.FragmentTestBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -20,6 +21,12 @@ class TestFragment : Fragment() {
     ): View {
         _binding = FragmentTestBinding.inflate(layoutInflater, container, false)
         return binding.root
+    }
+
+    private fun initClick() = binding.apply {
+        binding.ivNext.setOnClickListener {
+            findNavController().navigate(TestFragmentDirections.actionTestFragmentToMetricsFragment())
+        }
     }
 
     override fun onDestroy() {
