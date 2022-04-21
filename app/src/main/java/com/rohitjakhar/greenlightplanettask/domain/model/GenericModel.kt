@@ -1,5 +1,5 @@
 package com.rohitjakhar.greenlightplanettask.domain.model
 
-data class AreaModel(
+data class GenericModel(
     val name: String,
 )

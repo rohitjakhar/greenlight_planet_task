@@ -6,10 +6,10 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.rohitjakhar.greenlightplanettask.databinding.ItemTextLayoutBinding
-import com.rohitjakhar.greenlightplanettask.domain.model.AreaModel
+import com.rohitjakhar.greenlightplanettask.domain.model.GenericModel
 
-class AreaAdapter(private val onClick: (String) -> Unit) :
-    ListAdapter<AreaModel, AreaAdapter.AreaAdapterVH>(COMPARATOR) {
+class GenericAdapter(private val onClick: (String) -> Unit) :
+    ListAdapter<GenericModel, GenericAdapter.AreaAdapterVH>(COMPARATOR) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AreaAdapterVH {
         return AreaAdapterVH(
@@ -27,21 +27,21 @@ class AreaAdapter(private val onClick: (String) -> Unit) :
 
     inner class AreaAdapterVH(private val binding: ItemTextLayoutBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(data: AreaModel) = binding.apply {
+        fun bind(data: GenericModel) = binding.apply {
             tvName.text = data.name
         }
     }
 
     companion object {
-        private val COMPARATOR = object : DiffUtil.ItemCallback<AreaModel>() {
+        private val COMPARATOR = object : DiffUtil.ItemCallback<GenericModel>() {
             override fun areContentsTheSame(
-                oldItem: AreaModel,
-                newItem: AreaModel
+                oldItem: GenericModel,
+                newItem: GenericModel
             ): Boolean {
                 return oldItem.name == newItem.name
             }
 
-            override fun areItemsTheSame(oldItem: AreaModel, newItem: AreaModel): Boolean {
+            override fun areItemsTheSame(oldItem: GenericModel, newItem: GenericModel): Boolean {
                 return oldItem == newItem
             }
         }
