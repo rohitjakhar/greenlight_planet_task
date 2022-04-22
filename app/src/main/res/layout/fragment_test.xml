@@ -4,13 +4,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.fragment.TestFragment">
+    tools:context=".ui.fragment.TestFragment"
+    android:background="@color/yellow_500"
+    >
 
     <TextView
         android:id="@+id/tv_table_fun"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/tap_to_begin_the_fun"
+        style="@style/TextAppearance.AppCompat.Headline"
+        android:textStyle="bold"
         android:layout_marginBottom="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,11 +23,12 @@
 
     <ImageView
         android:id="@+id/iv_next"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:rotation="-90"
         android:src="@drawable/ic_arrow"
-        android:tint="@color/black"
+        app:tint="@color/black"
+        android:padding="8dp"
         android:contentDescription="@string/next_image"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -23,6 +23,11 @@ class TestFragment : Fragment() {
         return binding.root
     }
 
+    override fun onResume() {
+        super.onResume()
+        initClick()
+    }
+
     private fun initClick() = binding.apply {
         binding.ivNext.setOnClickListener {
             findNavController().navigate(TestFragmentDirections.actionTestFragmentToMetricsFragment())

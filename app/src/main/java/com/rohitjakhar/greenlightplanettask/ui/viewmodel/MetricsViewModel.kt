@@ -15,7 +15,7 @@ import javax.inject.Inject
 class MetricsViewModel @Inject constructor(
     private val saleDataRepo: SaleDataRepo
 ) : ViewModel() {
-    var metricsState = MutableStateFlow<Resource<GenericModel>>(Resource.Loading())
+    var metricsState = MutableStateFlow<Resource<List<GenericModel>>>(Resource.Loading())
         private set
 
     fun getMetrics() {

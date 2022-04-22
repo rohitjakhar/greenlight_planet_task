@@ -1,5 +1,8 @@
 package com.rohitjakhar.greenlightplanettask.data.repo
 
+import com.rohitjakhar.greenlightplanettask.data.remote.mockdata.getCitizenList
+import com.rohitjakhar.greenlightplanettask.data.remote.mockdata.getRegionPerformanceList
+import com.rohitjakhar.greenlightplanettask.data.remote.mockdata.getZonePerformanceList
 import com.rohitjakhar.greenlightplanettask.data.remote.webservice.WebService
 import com.rohitjakhar.greenlightplanettask.domain.model.GenericModel
 import com.rohitjakhar.greenlightplanettask.domain.repo.SaleDataRepo
@@ -25,18 +28,18 @@ class SaleDataRepoImpl @Inject constructor(
     }
 
     override suspend fun getCitizen(): Resource<List<GenericModel>> {
-        TODO("Not yet implemented")
+        return Resource.Success(data = getCitizenList())
     }
 
     override suspend fun getMetrics(): Resource<List<GenericModel>> {
-        TODO("Not yet implemented")
+        return Resource.Success(data = getCitizenList())
     }
 
     override suspend fun getRegionPerformance(): Resource<List<GenericModel>> {
-        TODO("Not yet implemented")
+        return Resource.Success(data = getRegionPerformanceList())
     }
 
     override suspend fun getZonePerformance(): Resource<List<GenericModel>> {
-        TODO("Not yet implemented")
+        return Resource.Success(data = getZonePerformanceList())
     }
 }
