@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/testFragment"
         android:name="com.rohitjakhar.greenlightplanettask.ui.fragment.TestFragment"
-        android:label="fragment_test"
+        android:label="Test"
         tools:layout="@layout/fragment_test" >
         <action
             android:id="@+id/action_testFragment_to_metricsFragment"
@@ -17,7 +17,7 @@
     <fragment
         android:id="@+id/metricsFragment"
         android:name="com.rohitjakhar.greenlightplanettask.ui.fragment.MetricsFragment"
-        android:label="fragment_metrics"
+        android:label="Metrics"
         tools:layout="@layout/fragment_metrics" >
         <action
             android:id="@+id/action_metricsFragment_to_zonePerformanceFragment"
@@ -26,7 +26,7 @@
     <fragment
         android:id="@+id/zonePerformanceFragment"
         android:name="com.rohitjakhar.greenlightplanettask.ui.fragment.ZonePerformanceFragment"
-        android:label="fragment_zone_performance"
+        android:label="Zone Performance"
         tools:layout="@layout/fragment_zone_performance" >
         <action
             android:id="@+id/action_zonePerformanceFragment_to_regionPerformanceFragment"
@@ -35,7 +35,7 @@
     <fragment
         android:id="@+id/regionPerformanceFragment"
         android:name="com.rohitjakhar.greenlightplanettask.ui.fragment.RegionPerformanceFragment"
-        android:label="fragment_region_performance"
+        android:label="Region Performance"
         tools:layout="@layout/fragment_region_performance" >
         <action
             android:id="@+id/action_regionPerformanceFragment_to_areaFragment"
@@ -47,7 +47,7 @@
     <fragment
         android:id="@+id/areaFragment"
         android:name="com.rohitjakhar.greenlightplanettask.ui.fragment.AreaFragment"
-        android:label="fragment_area"
+        android:label="Area"
         tools:layout="@layout/fragment_area" >
         <action
             android:id="@+id/action_areaFragment_to_citizensFragment"
@@ -59,7 +59,7 @@
     <fragment
         android:id="@+id/citizensFragment"
         android:name="com.rohitjakhar.greenlightplanettask.ui.fragment.CitizensFragment"
-        android:label="fragment_citizens"
+        android:label="Citizens"
         tools:layout="@layout/fragment_citizens" >
         <argument
             android:name="name"

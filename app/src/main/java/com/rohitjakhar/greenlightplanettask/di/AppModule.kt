@@ -1,8 +1,6 @@
 package com.rohitjakhar.greenlightplanettask.di
 
 import com.rohitjakhar.greenlightplanettask.data.remote.webservice.WebService
-import com.rohitjakhar.greenlightplanettask.data.repo.SaleDataRepoImpl
-import com.rohitjakhar.greenlightplanettask.domain.repo.SaleDataRepo
 import com.rohitjakhar.greenlightplanettask.utils.Constants.BASE_URL
 import dagger.Module
 import dagger.Provides
