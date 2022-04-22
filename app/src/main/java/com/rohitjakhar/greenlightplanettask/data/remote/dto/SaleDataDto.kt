@@ -157,3 +157,12 @@ fun SaleDataDto.toArea(): List<GenericModel> {
     }
     return areaList
 }
+
+fun SaleDataDto.toRegion(): List<GenericModel> {
+    val regionList = mutableListOf<GenericModel>()
+    this.responseData.salesRegion.forEach {
+        if (it.region != "NA")
+            regionList.add(GenericModel(name = it.region))
+    }
+    return regionList
+}

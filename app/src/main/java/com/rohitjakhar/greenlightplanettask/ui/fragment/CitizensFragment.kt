@@ -44,6 +44,17 @@ class CitizensFragment : Fragment() {
         collectData()
     }
 
+    override fun onResume() {
+        super.onResume()
+        initClick()
+    }
+
+    private fun initClick() = binding.apply {
+        includeList.tvHeader.setOnClickListener {
+            mAdapter.submitList(mAdapter.currentList.reversed())
+        }
+    }
+
     private fun collectData() {
         lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.RESUMED) {
@@ -54,7 +65,7 @@ class CitizensFragment : Fragment() {
                         is Resource.Loading -> {
                         }
                         is Resource.Success -> {
-                            mAdapter.submitList(it.data!!)
+                            mAdapter.submitList(it.data!!.sortedBy { it.name })
                         }
                     }
                 }

@@ -10,7 +10,9 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.rohitjakhar.greenlightplanettask.R
 import com.rohitjakhar.greenlightplanettask.databinding.FragmentRegionPerformanceBinding
 import com.rohitjakhar.greenlightplanettask.ui.adapter.GenericAdapter
 import com.rohitjakhar.greenlightplanettask.ui.viewmodel.RegionPerformanceViewModel
@@ -24,9 +26,14 @@ class RegionPerformanceFragment : Fragment() {
     private var _binding: FragmentRegionPerformanceBinding? = null
     private val binding get() = _binding!!
     private val viewModel by viewModels<RegionPerformanceViewModel>()
+    private val navArgs: RegionPerformanceFragmentArgs by navArgs()
     private val mAdapter by lazy {
         GenericAdapter {
-            findNavController().navigate(RegionPerformanceFragmentDirections.actionRegionPerformanceFragmentToAreaFragment())
+            findNavController().navigate(
+                RegionPerformanceFragmentDirections.actionRegionPerformanceFragmentToAreaFragment(
+                    it
+                )
+            )
         }
     }
 
@@ -42,8 +49,24 @@ class RegionPerformanceFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initView()
         initRecyclerView()
         collectData()
+    }
+
+    private fun initView() = binding.apply {
+        tvTitle.text = resources.getString(R.string.performance, navArgs.name)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        initClick()
+    }
+
+    private fun initClick() = binding.apply {
+        includeList.tvHeader.setOnClickListener {
+            mAdapter.submitList(mAdapter.currentList.reversed())
+        }
     }
 
     private fun collectData() {
@@ -56,7 +79,7 @@ class RegionPerformanceFragment : Fragment() {
                         is Resource.Loading -> {
                         }
                         is Resource.Success -> {
-                            mAdapter.submitList(it.data!!)
+                            mAdapter.submitList(it.data!!.sortedBy { it.name })
                         }
                     }
                 }

@@ -26,7 +26,11 @@ class ZonePerformanceFragment : Fragment() {
     private val viewModel by viewModels<ZonePerformanceViewModel>()
     private val mAdapter by lazy {
         GenericAdapter {
-            findNavController().navigate(ZonePerformanceFragmentDirections.actionZonePerformanceFragmentToRegionPerformanceFragment())
+            findNavController().navigate(
+                ZonePerformanceFragmentDirections.actionZonePerformanceFragmentToRegionPerformanceFragment(
+                    it
+                )
+            )
         }
     }
 
@@ -46,6 +50,17 @@ class ZonePerformanceFragment : Fragment() {
         collectData()
     }
 
+    override fun onResume() {
+        super.onResume()
+        initClick()
+    }
+
+    private fun initClick() = binding.apply {
+        includeList.tvHeader.setOnClickListener {
+            mAdapter.submitList(mAdapter.currentList.reversed())
+        }
+    }
+
     private fun collectData() {
         lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.RESUMED) {
@@ -56,7 +71,7 @@ class ZonePerformanceFragment : Fragment() {
                         is Resource.Loading -> {
                         }
                         is Resource.Success -> {
-                            mAdapter.submitList(it.data!!)
+                            mAdapter.submitList(it.data!!.sortedBy { it.name })
                         }
                     }
                 }

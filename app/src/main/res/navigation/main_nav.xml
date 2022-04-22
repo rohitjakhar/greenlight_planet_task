@@ -40,6 +40,9 @@
         <action
             android:id="@+id/action_regionPerformanceFragment_to_areaFragment"
             app:destination="@id/areaFragment" />
+        <argument
+            android:name="name"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/areaFragment"
@@ -49,10 +52,17 @@
         <action
             android:id="@+id/action_areaFragment_to_citizensFragment"
             app:destination="@id/citizensFragment" />
+        <argument
+            android:name="name"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/citizensFragment"
         android:name="com.rohitjakhar.greenlightplanettask.ui.fragment.CitizensFragment"
         android:label="fragment_citizens"
-        tools:layout="@layout/fragment_citizens" />
+        tools:layout="@layout/fragment_citizens" >
+        <argument
+            android:name="name"
+            app:argType="string" />
+    </fragment>
 </navigation>
