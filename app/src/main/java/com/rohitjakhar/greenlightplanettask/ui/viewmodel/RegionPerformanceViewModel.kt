@@ -21,7 +21,7 @@ class RegionPerformanceViewModel @Inject constructor(
     fun getRegionPerformance() {
         viewModelScope.launch(Dispatchers.IO) {
             regionPerformanceState.emit(Resource.Loading())
-            regionPerformanceState.emit(saleDataRepo.getCitizen())
+            regionPerformanceState.emit(saleDataRepo.getRegionPerformance())
         }
     }
 }

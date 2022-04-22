@@ -2,13 +2,14 @@ package com.rohitjakhar.greenlightplanettask.data.remote.dto
 
 import androidx.annotation.Keep
 import com.google.gson.annotations.SerializedName
+import com.rohitjakhar.greenlightplanettask.domain.model.GenericModel
 
 @Keep
 data class SaleDataDto(
     @SerializedName("ResponseData")
     val responseData: ResponseData,
     @SerializedName("ResponseStatus")
-    val responseStatus: Int,
+    val responseStatus: Double,
     @SerializedName("Success")
     val success: Boolean
 ) {
@@ -28,19 +29,19 @@ data class SaleDataDto(
             @SerializedName("area")
             val area: String,
             @SerializedName("count_unsigned_contracts")
-            val countUnsignedContracts: Int,
+            val countUnsignedContracts: Double,
             @SerializedName("last_month_sales")
             val lastMonthSales: Double,
             @SerializedName("lmsd_weighted_units")
-            val lmsdWeightedUnits: Int,
+            val lmsdWeightedUnits: Double,
             @SerializedName("mtd_new_selling_agents")
-            val mtdNewSellingAgents: Int,
+            val mtdNewSellingAgents: Double,
             @SerializedName("mtd_unit_sales")
-            val mtdUnitSales: Int,
+            val mtdUnitSales: Double,
             @SerializedName("mtd_weighted_units")
-            val mtdWeightedUnits: Int,
+            val mtdWeightedUnits: Float,
             @SerializedName("signed_contracts")
-            val signedContracts: Int,
+            val signedContracts: Double,
             @SerializedName("territory")
             val territory: String
         )
@@ -48,9 +49,9 @@ data class SaleDataDto(
         @Keep
         data class SalesCountry(
             @SerializedName("achievement")
-            val achievement: Int,
+            val achievement: Double,
             @SerializedName("count_unsigned_contracts")
-            val countUnsignedContracts: Int,
+            val countUnsignedContracts: Double,
             @SerializedName("country")
             val country: String,
             @SerializedName("daily_runrate_current")
@@ -58,47 +59,47 @@ data class SaleDataDto(
             @SerializedName("daily_runrate_required")
             val dailyRunrateRequired: Double,
             @SerializedName("id")
-            val id: Int,
+            val id: Double,
             @SerializedName("last_month_sales")
-            val lastMonthSales: Int,
+            val lastMonthSales: Double,
             @SerializedName("lmsd_active_2_agents")
-            val lmsdActive2Agents: Int,
+            val lmsdActive2Agents: Double,
             @SerializedName("lmsd_active_agents")
-            val lmsdActiveAgents: Int,
+            val lmsdActiveAgents: Double,
             @SerializedName("lmsd_weighted_units")
-            val lmsdWeightedUnits: Int,
+            val lmsdWeightedUnits: Double,
             @SerializedName("mtd_active_2_agents")
-            val mtdActive2Agents: Int,
+            val mtdActive2Agents: Double,
             @SerializedName("mtd_active_agents")
-            val mtdActiveAgents: Int,
+            val mtdActiveAgents: Double,
             @SerializedName("mtd_new_selling_agents")
-            val mtdNewSellingAgents: Int,
+            val mtdNewSellingAgents: Double,
             @SerializedName("mtd_sales_bucket_1")
-            val mtdSalesBucket1: Int,
+            val mtdSalesBucket1: Double,
             @SerializedName("mtd_sales_bucket_2")
-            val mtdSalesBucket2: Int,
+            val mtdSalesBucket2: Double,
             @SerializedName("mtd_sales_bucket_3")
-            val mtdSalesBucket3: Int,
+            val mtdSalesBucket3: Double,
             @SerializedName("mtd_sales_bucket_4")
-            val mtdSalesBucket4: Int,
+            val mtdSalesBucket4: Double,
             @SerializedName("mtd_sales_bucket_5")
-            val mtdSalesBucket5: Int,
+            val mtdSalesBucket5: Double,
             @SerializedName("mtd_sales_bucket_6")
-            val mtdSalesBucket6: Int,
+            val mtdSalesBucket6: Double,
             @SerializedName("mtd_unit_sales")
-            val mtdUnitSales: Int,
+            val mtdUnitSales: Double,
             @SerializedName("mtd_weighted_units")
             val mtdWeightedUnits: Double,
             @SerializedName("percent_agent_met")
             val percentAgentMet: Double,
             @SerializedName("sales_monthly_goal")
-            val salesMonthlyGoal: Int,
+            val salesMonthlyGoal: Double,
             @SerializedName("signed_contracts")
-            val signedContracts: Int,
+            val signedContracts: Double,
             @SerializedName("territory")
             val territory: String,
             @SerializedName("today_sales")
-            val todaySales: Int,
+            val todaySales: Double,
             @SerializedName("yesterday_sales")
             val yesterdaySales: Double
         )
@@ -106,21 +107,21 @@ data class SaleDataDto(
         @Keep
         data class SalesRegion(
             @SerializedName("count_unsigned_contracts")
-            val countUnsignedContracts: Int,
+            val countUnsignedContracts: Double,
             @SerializedName("last_month_sales")
             val lastMonthSales: Double,
             @SerializedName("lmsd_weighted_units")
             val lmsdWeightedUnits: Double,
             @SerializedName("mtd_new_selling_agents")
-            val mtdNewSellingAgents: Int,
+            val mtdNewSellingAgents: Double,
             @SerializedName("mtd_unit_sales")
-            val mtdUnitSales: Int,
+            val mtdUnitSales: Double,
             @SerializedName("mtd_weighted_units")
             val mtdWeightedUnits: Double,
             @SerializedName("region")
             val region: String,
             @SerializedName("signed_contracts")
-            val signedContracts: Int,
+            val signedContracts: Double,
             @SerializedName("territory")
             val territory: String
         )
@@ -128,23 +129,31 @@ data class SaleDataDto(
         @Keep
         data class SalesZone(
             @SerializedName("count_unsigned_contracts")
-            val countUnsignedContracts: Int,
+            val countUnsignedContracts: Double,
             @SerializedName("last_month_sales")
-            val lastMonthSales: Int,
+            val lastMonthSales: Double,
             @SerializedName("lmsd_weighted_units")
-            val lmsdWeightedUnits: Int,
+            val lmsdWeightedUnits: Double,
             @SerializedName("mtd_new_selling_agents")
-            val mtdNewSellingAgents: Int,
+            val mtdNewSellingAgents: Double,
             @SerializedName("mtd_unit_sales")
-            val mtdUnitSales: Int,
+            val mtdUnitSales: Double,
             @SerializedName("mtd_weighted_units")
             val mtdWeightedUnits: Double,
             @SerializedName("signed_contracts")
-            val signedContracts: Int,
+            val signedContracts: Double,
             @SerializedName("territory")
             val territory: String,
             @SerializedName("zone")
             val zone: String
         )
     }
+}
+
+fun SaleDataDto.toArea(): List<GenericModel> {
+    val areaList = mutableListOf<GenericModel>()
+    this.responseData.salesArea.forEach {
+        areaList.add(GenericModel(name = it.area))
+    }
+    return areaList
 }

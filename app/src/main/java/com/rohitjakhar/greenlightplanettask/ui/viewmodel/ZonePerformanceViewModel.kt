@@ -21,7 +21,7 @@ class ZonePerformanceViewModel @Inject constructor(
     fun getZonePerformance() {
         viewModelScope.launch(Dispatchers.IO) {
             zonePerformanceState.emit(Resource.Loading())
-            zonePerformanceState.emit(saleDataRepo.getCitizen())
+            zonePerformanceState.emit(saleDataRepo.getZonePerformance())
         }
     }
 }

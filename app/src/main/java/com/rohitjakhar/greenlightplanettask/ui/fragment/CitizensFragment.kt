@@ -34,6 +34,7 @@ class CitizensFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentCitizensBinding.inflate(layoutInflater, container, false)
+        viewModel.getCitizen()
         return binding.root
     }
 
@@ -62,10 +63,10 @@ class CitizensFragment : Fragment() {
     }
 
     private fun initRecyclerView() {
-        /*binding.includeList.recycleViewName.apply {
+        binding.includeList.recycleViewName.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = mAdapter
-        }*/
+        }
     }
 
     override fun onDestroy() {

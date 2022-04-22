@@ -29,6 +29,9 @@ class GenericAdapter(private val onClick: (String) -> Unit) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(data: GenericModel) = binding.apply {
             tvName.text = data.name
+            root.setOnClickListener {
+                onClick.invoke(data.name)
+            }
         }
     }
 

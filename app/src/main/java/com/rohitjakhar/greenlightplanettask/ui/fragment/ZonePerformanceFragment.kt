@@ -9,6 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.rohitjakhar.greenlightplanettask.databinding.FragmentZonePerformanceBinding
 import com.rohitjakhar.greenlightplanettask.ui.adapter.GenericAdapter
@@ -25,6 +26,7 @@ class ZonePerformanceFragment : Fragment() {
     private val viewModel by viewModels<ZonePerformanceViewModel>()
     private val mAdapter by lazy {
         GenericAdapter {
+            findNavController().navigate(ZonePerformanceFragmentDirections.actionZonePerformanceFragmentToRegionPerformanceFragment())
         }
     }
 
@@ -34,6 +36,7 @@ class ZonePerformanceFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentZonePerformanceBinding.inflate(layoutInflater, container, false)
+        viewModel.getZonePerformance()
         return binding.root
     }
 

@@ -1,5 +1,6 @@
 package com.rohitjakhar.greenlightplanettask.data.repo
 
+import com.rohitjakhar.greenlightplanettask.data.remote.dto.toArea
 import com.rohitjakhar.greenlightplanettask.data.remote.mockdata.getCitizenList
 import com.rohitjakhar.greenlightplanettask.data.remote.mockdata.getRegionPerformanceList
 import com.rohitjakhar.greenlightplanettask.data.remote.mockdata.getZonePerformanceList
@@ -21,7 +22,7 @@ class SaleDataRepoImpl @Inject constructor(
             if (task.body() == null) {
                 return Resource.Empty()
             }
-            return Resource.Success(listOf(GenericModel("")))
+            return Resource.Success(task.body()!!.toArea())
         } catch (e: Exception) {
             return Resource.Error(message = e.localizedMessage)
         }

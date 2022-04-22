@@ -9,6 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.rohitjakhar.greenlightplanettask.databinding.FragmentAreaBinding
 import com.rohitjakhar.greenlightplanettask.ui.adapter.GenericAdapter
@@ -25,6 +26,7 @@ class AreaFragment : Fragment() {
     private val viewModel by viewModels<AreaViewModel>()
     private val mAdapter by lazy {
         GenericAdapter {
+            findNavController().navigate(AreaFragmentDirections.actionAreaFragmentToCitizensFragment())
         }
     }
 
