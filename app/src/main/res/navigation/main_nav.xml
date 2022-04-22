@@ -12,7 +12,10 @@
         tools:layout="@layout/fragment_test" >
         <action
             android:id="@+id/action_testFragment_to_metricsFragment"
-            app:destination="@id/metricsFragment" />
+            app:destination="@id/metricsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:popEnterAnim="@anim/slide_bottom_up"
+            />
     </fragment>
     <fragment
         android:id="@+id/metricsFragment"
@@ -21,7 +24,10 @@
         tools:layout="@layout/fragment_metrics" >
         <action
             android:id="@+id/action_metricsFragment_to_zonePerformanceFragment"
-            app:destination="@id/zonePerformanceFragment" />
+            app:destination="@id/zonePerformanceFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:popEnterAnim="@anim/slide_bottom_up"
+            />
     </fragment>
     <fragment
         android:id="@+id/zonePerformanceFragment"
@@ -30,7 +36,9 @@
         tools:layout="@layout/fragment_zone_performance" >
         <action
             android:id="@+id/action_zonePerformanceFragment_to_regionPerformanceFragment"
-            app:destination="@id/regionPerformanceFragment" />
+            app:destination="@id/regionPerformanceFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:popEnterAnim="@anim/slide_bottom_up"/>
     </fragment>
     <fragment
         android:id="@+id/regionPerformanceFragment"
@@ -39,7 +47,10 @@
         tools:layout="@layout/fragment_region_performance" >
         <action
             android:id="@+id/action_regionPerformanceFragment_to_areaFragment"
-            app:destination="@id/areaFragment" />
+            app:destination="@id/areaFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:popEnterAnim="@anim/slide_bottom_up"
+            />
         <argument
             android:name="name"
             app:argType="string" />
@@ -51,7 +62,9 @@
         tools:layout="@layout/fragment_area" >
         <action
             android:id="@+id/action_areaFragment_to_citizensFragment"
-            app:destination="@id/citizensFragment" />
+            app:destination="@id/citizensFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:popEnterAnim="@anim/slide_bottom_up"/>
         <argument
             android:name="name"
             app:argType="string" />
