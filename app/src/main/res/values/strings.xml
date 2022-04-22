@@ -6,4 +6,5 @@
     <string name="tap_to_begin_the_fun">Tap to begin the fun!</string>
     <string name="performance_by_zone">Performance By Zone</string>
     <string name="performance">%s Performance</string>
+    <string name="zone">Zone</string>
 </resources>

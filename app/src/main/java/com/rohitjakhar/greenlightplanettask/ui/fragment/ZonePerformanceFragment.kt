@@ -11,6 +11,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.rohitjakhar.greenlightplanettask.R
 import com.rohitjakhar.greenlightplanettask.databinding.FragmentZonePerformanceBinding
 import com.rohitjakhar.greenlightplanettask.ui.adapter.GenericAdapter
 import com.rohitjakhar.greenlightplanettask.ui.viewmodel.ZonePerformanceViewModel
@@ -46,8 +47,13 @@ class ZonePerformanceFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initView()
         initRecyclerView()
         collectData()
+    }
+
+    private fun initView() = binding.apply {
+        includeList.tvHeader.text = resources.getString(R.string.zone)
     }
 
     override fun onResume() {

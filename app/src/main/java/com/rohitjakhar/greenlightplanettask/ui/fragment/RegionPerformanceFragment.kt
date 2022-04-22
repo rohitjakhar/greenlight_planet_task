@@ -56,6 +56,7 @@ class RegionPerformanceFragment : Fragment() {
 
     private fun initView() = binding.apply {
         tvTitle.text = resources.getString(R.string.performance, navArgs.name)
+        includeList.tvHeader.text = resources.getString(R.string.zone)
     }
 
     override fun onResume() {
